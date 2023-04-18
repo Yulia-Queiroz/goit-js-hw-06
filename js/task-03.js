@@ -13,11 +13,14 @@ const images = [
   },
 ];
 
-const galleryContainer = document.querySelector(".gallery");
+const galleryContainer = document.querySelector('.gallery');
 
-const imagesEl = images.map(image => { return `<li><img src ="${image.url}" alt = "${image.alt}" width = "200"></li>` })
+const imagesEl = images
+  .map((image) => {
+    return `<li><img src ="${image.url}" alt = "${image.alt}" width = "200" height = "130"></li>`;
+  })
   .join('');
-
 
 galleryContainer.insertAdjacentHTML('afterbegin', imagesEl);
 
+galleryContainer.classList.add('gallery_flex');
